@@ -1,13 +1,30 @@
-import './App.css'
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <h1>My Articles</h1>
-      </nav>
+      <BrowserRouter>
+        <nav>
+          <h1>My Articles</h1>
+        </nav>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
 
-export default App
+export default App;
